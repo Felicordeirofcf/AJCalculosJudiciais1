@@ -1,80 +1,98 @@
-# ⚖️ Calculadora Judicial
+# ⚖️ AJCALC — Calculadora Judicial
 
-Uma aplicação de desktop desenvolvida em **Python + PySide6** para gestão de clientes e cálculos judiciais, com lembretes automáticos de prazos diretamente no Windows.
+Sistema de gestão de cálculos judiciais com cadastro de clientes, prazos processuais e notificações automáticas.
 
 ---
 
-## 🛠 Funcionalidades
+## 📦 Funcionalidades
 
-- Cadastro de clientes com nome, celular, email e OAB.
-- Cadastro de cálculos/processos com vínculo ao cliente.
-- Filtro de busca por cliente ou número do processo.
-- Tabela com lista de clientes e processos.
-- Criação automática de lembretes de prazos via `schtasks` do Windows.
-- Suporte a múltiplas áreas: Trabalhista, Cível e Federal.
-- Alternância entre modo claro e escuro.
-- Interface intuitiva construída com **PySide6** (Qt para Python).
+- Cadastro de clientes com nome, celular, e-mail e OAB
+- Registro de cálculos judiciais por cliente
+- Controle de prazos com datas e valores
+- Filtro por número de processo ou nome do cliente
+- Notificações automáticas:
+  - Na inicialização do sistema (prazos vencidos, de hoje e de amanhã)
+  - Criadas no Agendador de Tarefas do Windows
+  - Notificações na bandeja com `win10toast`
+- Alternância entre tema claro e escuro
+- Interface moderna com PySide6 (Qt para Python)
 
 ---
 
 ## 🧱 Estrutura do Projeto
-📁 projeto_calculadora 
-├── main.py # Arquivo principal 
-├── ui_mainwindow.py # Interface gráfica e lógica principal
-├── controllers/ │ └── database.py # Conexão e operações com SQLite 
-├── utils/ │ └── helpers.py # Funções auxiliares (callbacks, etc) 
-├── logo.png # Logotipo da aplicação └── README.md # Este arquivo
 
----
+📁 AJCALC/ 
+├── main.py # Ponto de entrada do app
+├── ui_mainwindow.py # Interface gráfica principal 
+├── controllers/ │ └── database.py # Funções de banco de dados SQLite
+├── utils/ │ └── helpers.py # Utilitários (callbacks, etc.) 
+├── logo.png # Logotipo do sistema 
+└── README.md # Este arquivo
 
-## 💻 Requisitos
-
-- Python 3.8+
-- PySide6
-
-Instale os pacotes necessários com:
-
-```bash
-pip install -r requirements.txt
-
-▶️ Como Executar
-Clone o repositório:
-
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-Execute a aplicação:
-
-bash
-Copiar
-Editar
-python main.py
-🧠 Observações
-Os lembretes de prazo são criados com o agendador de tarefas do Windows (schtasks). Certifique-se de que o terminal esteja com permissões administrativas.
-
-O comando msg * pode não funcionar em versões domésticas do Windows ou sem permissões de rede/local.
-
-📦 Compilação para .exe (opcional)
-Para gerar um executável com PyInstaller:
-
-bash
-Copiar
-Editar
-pip install pyinstaller
-pyinstaller --onefile --windowed main.py
-📸 Captura de Tela
-(Adicione aqui prints do sistema em funcionamento, caso deseje)
-
-👨‍💻 Autor
-Desenvolvido por [Seu Nome]
-
-📝 Licença
-Este projeto está licenciado sob a MIT License.
+arquivo
 
 yaml
 Copiar
 Editar
 
 ---
+
+## ▶️ Como Executar
+
+1. Clone o projeto:
+```bash
+git clone https://github.com/seu-usuario/AJCALC.git
+cd AJCALC
+Instale as dependências:
+
+bash
+Copiar
+Editar
+pip install -r requirements.txt
+Execute o sistema:
+
+bash
+Copiar
+Editar
+python main.py
+✅ Requisitos
+Python 3.8 ou superior
+
+Windows (para integração com schtasks e msg)
+
+Módulos Python:
+
+nginx
+Copiar
+Editar
+PySide6
+win10toast
+Você pode instalar tudo com:
+
+bash
+Copiar
+Editar
+pip install PySide6 win10toast
+Ou criar um requirements.txt com:
+
+nginx
+Copiar
+Editar
+PySide6
+win10toast
+💡 Observações
+As tarefas são criadas com o Agendador de Tarefas do Windows (schtasks) e não aparecem no aplicativo de "Alarmes".
+
+As notificações na bandeja aparecem ao abrir o sistema, utilizando win10toast.
+
+📸 Imagens (opcional)
+Adicione aqui prints do sistema em execução, se desejar.
+
+📜 Licença
+Distribuído sob a licença MIT. Veja LICENSE para mais informações.
+
+👨‍💻 Autor
+Desenvolvido por [FELIPE FERREIRA]
+
+
+
